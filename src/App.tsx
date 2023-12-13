@@ -1,10 +1,15 @@
 import React from 'react'
+import './app.scss'
+import Title from './components/Title/Title'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>Исторические даты</h1>
-      <p>2011</p>
+    <div className="app">
+      <div className="app__container">
+        <div className="app__content">
+          <Title text={'Исторические даты'} />
+        </div>
+      </div>
     </div>
   )
 }
