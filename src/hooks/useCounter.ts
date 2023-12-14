@@ -5,10 +5,7 @@ export const useCounter = (value: number, defaultValue: number): number => {
   const duration: number = 20
 
   useEffect(() => {
-    if (!value) return
-    if (value === counter) {
-      return
-    }
+    if (!value || value === counter) return
 
     const timerId = setTimeout(() => {
       if (value > counter) {
