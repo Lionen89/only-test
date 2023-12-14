@@ -16,11 +16,11 @@
     font-weight: 700;
     line-height: 200px;
 
-    &:nth-child(1){
+    &:nth-child(1) {
       color: $iris;
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
       color: $fuschia;
     }
   }
@@ -40,22 +40,22 @@
     }
   }
 
-  &__activeType{
+  &__activeType {
     position: absolute;
     margin: 0;
     font-size: 20px;
     font-weight: 700;
     color: $blackBlue;
     left: calc(50% + 180px);
-    top: 50px;
+    top: 20px;
+    text-transform: capitalize;
 
     @media screen and (max-width: 1280px) {
-      top: 20px;
+      top: 0;
     }
 
     @media screen and (max-width: 1024px) {
-      top: 20px;
-      left: calc(50% + 150px);
+      left: calc(50% + 130px);
     }
     @media screen and (max-width: 640px) {
       display: none;
@@ -63,9 +63,7 @@
   }
 }
 
-
-
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1280px) {
   .menu {
     min-height: 530px;
     padding-bottom: 40px;
@@ -75,7 +73,7 @@
       line-height: 1.2em;
     }
   }
-} 
+}
 
 @media screen and (max-width: 1024px) {
   .menu {
@@ -85,7 +83,7 @@
       line-height: 1.2em;
     }
   }
-} 
+}
 
 @media screen and (max-width: 640px) {
   .menu {
@@ -100,4 +98,4 @@
       margin: 0;
     }
   }
-} 
+}
