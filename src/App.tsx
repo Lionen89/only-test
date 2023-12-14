@@ -16,9 +16,9 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <div className="app__container">
-        <div className="app__content">
+        <div className="app__wrapper">
           <Title text={'Исторические даты'} />
-          <Menu />
+          {eventList.length !== 0 && <Menu />}
         </div>
       </div>
     </div>
