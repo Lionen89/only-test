@@ -4,7 +4,7 @@ import './curcleButton.scss'
 
 type curcleButtonProps = {
   onClick: React.MouseEventHandler
-  pointName: string
+  pointName: number
   active: boolean
 }
 

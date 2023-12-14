@@ -1,0 +1,42 @@
+@import 'src/styles/variables.scss';
+
+.counter {
+  &__text {
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 200px;
+    color: $iris;
+
+    &:nth-child(2) {
+      color: $fuschia;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .counter {
+    &__text {
+      font-size: 150px;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .counter {
+    &__text {
+      font-size: 96px;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .counter {
+    &__text {
+      font-size: 56px;
+      line-height: 72.46px;
+      margin: 0;
+    }
+  }
+}

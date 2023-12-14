@@ -5,11 +5,6 @@ export const mockData: EventList[] = [
     id: 0,
     activeElement: 3,
     type: 'музыка',
-    points: {
-      from: 1980,
-      to: 1986,
-    },
-    pointName: '1',
     events: [
       {
         year: 1980,
@@ -45,11 +40,6 @@ export const mockData: EventList[] = [
   {
     id: 1,
     type: 'кино',
-    points: {
-      from: 1987,
-      to: 1991,
-    },
-    pointName: '2',
     events: [
       {
         year: 1987,
@@ -77,11 +67,6 @@ export const mockData: EventList[] = [
   {
     type: 'литература',
     id: 2,
-    points: {
-      from: 1992,
-      to: 1997,
-    },
-    pointName: '3',
     events: [
       {
         year: 1992,
@@ -105,11 +90,6 @@ export const mockData: EventList[] = [
   {
     type: 'искусство',
     id: 3,
-    points: {
-      from: 1999,
-      to: 2004,
-    },
-    pointName: '4',
     events: [
       {
         year: 1999,
@@ -134,11 +114,6 @@ export const mockData: EventList[] = [
   {
     id: 4,
     type: 'биология',
-    points: {
-      from: 1590,
-      to: 2010,
-    },
-    pointName: '5',
     events: [
       {
         year: 1590,
@@ -170,11 +145,6 @@ export const mockData: EventList[] = [
   {
     id: 5,
     type: 'наука',
-    points: {
-      from: 2015,
-      to: 2022,
-    },
-    pointName: '6',
     events: [
       {
         year: 2015,

@@ -17,13 +17,12 @@ const CurclePagination: React.FC<curclePaginationProps> = ({ onClick, points }) 
   const prevSelectedRef = React.useRef(selected)
   const numberPoints = points.length
 
-  const appRef = useRef(null)
+  const pagination = useRef(null)
   const ctx = useRef()
 
   useLayoutEffect(() => {
     if (!prevSelectedRef.current) return
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const ctx = gsap.context(() => {}, appRef)
+    const ctx = gsap.context(() => {}, pagination)
 
     return () => ctx.current.revert()
   }, [ctx])
@@ -43,9 +42,9 @@ const CurclePagination: React.FC<curclePaginationProps> = ({ onClick, points }) 
   }, [selected])
 
   return (
-    <div ref={appRef} className="pagination">
-      {points.map(({ id, pointName }) => (
-        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} pointName={pointName} />
+    <div ref={pagination} className="pagination">
+      {points.map(({ id }) => (
+        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} pointName={id + 1} />
       ))}
     </div>
   )
