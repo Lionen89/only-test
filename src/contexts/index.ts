@@ -4,6 +4,7 @@ import { EventList } from '../types/types'
 
 export type SliderContextType = {
   selected: number
+  lastSelected: number
   startDate: number
   endDate: number
   eventList: EventList[] | []

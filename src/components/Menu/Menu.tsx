@@ -7,8 +7,10 @@ import Counter from '../Counter/Counter'
 import { getEndDate } from '../helpers/getEndDate'
 import { getStartDate } from '../helpers/getStartDate'
 
-const Menu: React.FC = () => {
-  const { changeSelected, selected, eventList, startDate, endDate } = useSlider()
+interface MenuProps {}
+
+const Menu: React.FC<MenuProps> = () => {
+  const { changeSelected, selected, lastSelected, eventList, startDate, endDate } = useSlider()
   const [activeType, setActiveType] = React.useState<string | undefined>(undefined)
 
   const handleClick = (index: number) => () => {
@@ -23,8 +25,16 @@ const Menu: React.FC = () => {
 
   return (
     <div className="menu">
-      <Counter defaultValue={getStartDate(eventList)} value={startDate} />
-      <Counter defaultValue={getEndDate(eventList)} value={endDate} />
+      <Counter
+        defaultValue={getStartDate(eventList[lastSelected])}
+        value={startDate}
+        eventCount={eventList[selected].events.length}
+      />
+      <Counter
+        defaultValue={getEndDate(eventList[lastSelected])}
+        value={endDate}
+        eventCount={eventList[selected].events.length}
+      />
       <CurclePagination onClick={handleClick} points={eventList} />
       <p className="menu__activeType">{activeType}</p>
     </div>

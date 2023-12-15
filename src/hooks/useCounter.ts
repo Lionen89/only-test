@@ -1,24 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
-export const useCounter = (value: number, defaultValue: number): number => {
+export const useCounter = (value: number, defaultValue: number, eventCount: number): number => {
   const [counter, setCounter] = useState<number>(defaultValue)
   const duration: number = 20
+  const delay = 3
+
+  const versionRef = useRef<number>(0)
 
   useEffect(() => {
     if (!value || value === counter) return
 
-    const timerId = setTimeout(() => {
-      if (value > counter) {
-        setCounter((prev) => prev + 1)
-      } else {
-        setCounter((prev) => prev - 1)
+    const step = Math.round(Math.abs((value - defaultValue) / eventCount / delay))
+    versionRef.current += 1
+    const currentVersion = versionRef.current
+
+    const intervalId = setInterval(() => {
+      if (currentVersion === versionRef.current) {
+        setCounter((prev) => {
+          const shouldIncrease = value > counter && prev + step <= value
+          const shouldDecrease = value < counter && prev - step >= value
+
+          if (shouldIncrease || shouldDecrease) {
+            return shouldIncrease ? prev + step : prev - step
+          } else {
+            return value
+          }
+        })
       }
     }, duration)
 
     return () => {
-      clearTimeout(timerId)
+      clearInterval(intervalId)
     }
-  }, [counter, value])
+  }, [counter, value, defaultValue, eventCount])
 
   return counter
 }

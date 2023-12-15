@@ -1,0 +1,96 @@
+@import 'src/styles/variables.scss';
+.sliderWrapper {
+  overflow: visible;
+  &__button-next,
+  &__button-prev {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    border: 1px solid $borderBullete;
+    background-image: url('../../images/SliderBtnIcon.svg');
+    background-position: center;
+    background-size: 50px;
+    background-repeat: no-repeat;
+  }
+
+  .swiper-pagination {
+    display: none;
+
+    .swiper-pagination-bullet {
+      background-color: $blackBlue;
+      opacity: 0.4;
+      width: 6px;
+      height: 6px;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+    @media screen and (max-width: 640px) {
+      display: block;
+    }
+  }
+  &__button-prev,
+  &__button-next {
+    background-size: 12.5px;
+  }
+
+  &__button-next {
+    top: -56px;
+    left: 70px;
+  }
+
+  &__button-prev {
+    top: -56px;
+    transform: rotate(180deg);
+    left: 0;
+  }
+
+  &__fraction {
+    font-size: 14px;
+    color: #42567a;
+    position: absolute;
+    left: 0;
+    top: -86px;
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 640px) {
+  .sliderWrapper {
+    min-height: 260px;
+    position: static;
+    .swiper-pagination {
+      bottom: 32px;
+    }
+    &__button-next,
+    &__button-prev {
+      width: 25px;
+      height: 25px;
+      bottom: 13px;
+      top: auto;
+    }
+
+    &__button-next {
+      left: 40px;
+    }
+
+    &__button-prev,
+    &__button-next {
+      background-size: 6.25px;
+    }
+
+    &__fraction {
+      top: auto;
+      bottom: 55px;
+    }
+  }
+}

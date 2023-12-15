@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useEffect } from 'react'
 
 import gsap from 'gsap'
 import './curclePagination.scss'
@@ -17,14 +17,14 @@ const CurclePagination: React.FC<curclePaginationProps> = ({ onClick, points }) 
   const prevSelectedRef = React.useRef(selected)
   const numberPoints = points.length
 
-  const pagination = useRef(null)
-  const ctx = useRef()
+  const pagination = React.useRef(null)
+  const ctx = React.useRef()
 
   useLayoutEffect(() => {
     if (!prevSelectedRef.current) return
     const ctx = gsap.context(() => {}, pagination)
 
-    return () => ctx.current.revert()
+    return () => ctx.current?.revert()
   }, [ctx])
 
   useEffect(() => {

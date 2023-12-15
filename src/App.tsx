@@ -4,6 +4,7 @@ import Title from './components/Title/Title'
 import Menu from './components/Menu/Menu'
 import { useSlider } from './hooks/useSlider'
 import { mockData } from './utils/data'
+import SliderWrapper from './components/SliderWrapper/SliderWrapper'
 
 const App: React.FC = () => {
   const { setEventList, eventList, changeSelected } = useSlider()
@@ -18,7 +19,12 @@ const App: React.FC = () => {
       <div className="app__container">
         <div className="app__wrapper">
           <Title text={'Исторические даты'} />
-          {eventList.length !== 0 && <Menu />}
+          {eventList.length !== 0 && (
+            <>
+              <Menu />
+              <SliderWrapper />
+            </>
+          )}
         </div>
       </div>
     </div>

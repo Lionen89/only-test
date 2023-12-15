@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&family=Passion+One&display=swap');
+@import 'src/styles/variables.scss';
+
+$nestedButton-size: 40px;
+
+.nestedSlider {
+
+  .swiper-button-next,
+  .swiper-button-prev{
+    position: fixed;
+    width: $nestedButton-size;
+    height: $nestedButton-size;
+    background-color: $white; 
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px 0px $shadowColor;
+    z-index: 1000000;
+
+  }
+
+  .swiper-button-next{
+    right: - calc($content-margin / 2 + $nestedButton-size / 2);
+  }
+
+  .swiper-button-prev{
+    left: - calc($content-margin / 2 + $nestedButton-size / 2);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    color:$blackBlue;
+    font-size: 12.5px;
+  }
+  
+  .swiper-button-disabled {
+    display: none;
+  }  
+
+  h2{
+    size: 25px;
+    line-height: 30px;
+    color:  $blue;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+  }
+
+  p{
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+
+@media screen and (max-width: 1260px) {
+  .nestedSlider .swiper-button-next{
+    right: - calc($content-medium-margin / 2 + $nestedButton-size / 2);
+  }
+
+  .nestedSlider .swiper-button-prev{
+    left: - calc($content-medium-margin / 2 + $nestedButton-size / 2);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nestedSlider {
+    h2{
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    p{
+      font-size: 14px;
+      line-height: 20.3px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+      display: none;
+    }
+
+  }
+}
