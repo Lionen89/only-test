@@ -1,6 +1,7 @@
 @import 'src/styles/variables.scss';
 .app {
   &__container {
+    max-width: 100svw;
     position: relative;
     margin: auto;
     max-width: 1440px;
@@ -10,7 +11,7 @@
     border-left: 1px solid rgba(66, 86, 122, 0.1);
     border-right: 1px solid rgba(66, 86, 122, 0.1);
     overflow: hidden;
-    padding: 170px $content-margin 100px $content-margin;
+    padding: 50px $content-margin 0 $content-margin;
   }
 
   &__wrapper {
@@ -41,7 +42,6 @@
     &__container {
       max-width: auto;
       padding-top: 90px;
-      padding-bottom: 50px;
       width: 100%;
       border: none;
     }
