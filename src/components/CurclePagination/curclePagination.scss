@@ -30,7 +30,11 @@ $rotateDeg: 120deg;
     }
   }
 }
-
+@media screen and (max-width: 1280px) {
+  .pagination {
+    margin-top: 100px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .pagination {
     width: $container-medium-size;
